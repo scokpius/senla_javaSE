@@ -28,4 +28,13 @@ class Cat {
         this.oldCat = old;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "Name cat is " + getNameCat() + ". Hi is " + getOldCat() + ".";
+    }
 }
