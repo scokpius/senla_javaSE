@@ -12,7 +12,7 @@ public static void main(String[] args) {
 
         while (i<=10){
             cat = new Cat();
-            System.out.println("Name cat is " + cat.getNameCat() + ". Hi is " + cat.getOldCat() + ".");
+            System.out.println(cat);
             i++;
         }
         System.out.println("------------------------------------------------");
@@ -20,13 +20,13 @@ public static void main(String[] args) {
             cat = new Cat();
             cat.setNameCat(names[j]);
             cat.setOldCat(olds[j]);
-            System.out.println("Name cat is " + cat.getNameCat() + ". Hi is " + cat.getOldCat() + ".");
+            System.out.println(cat);
         }
         System.out.println("------------------------------------------------");
         i = 0;
         do {
             cat = new Cat(names[i], olds[i]);
-            System.out.println("Name cat is " + cat.getNameCat() + ". Hi is " + cat.getOldCat() + ".");
+            System.out.println(cat);
             i++;
         } while (i<10);
         System.out.println("------------------------------------------------");
@@ -37,7 +37,7 @@ public static void main(String[] args) {
             cats[j].setOldCat(olds[j+2]);
         }
         for (Cat cat1 : cats) {
-            System.out.println("Name cat is " + cat1.getNameCat() + ". Hi is " + cat1.getOldCat() + ".");
+            System.out.println(cat1);
         }
         System.out.println("------------------------------------------------");
         System.out.println(cats[1].equals(cats[2]));
