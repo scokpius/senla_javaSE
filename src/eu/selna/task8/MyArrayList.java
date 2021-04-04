@@ -1,7 +1,7 @@
 package eu.selna.task8;
 
 import java.util.*;
-import java.util.function.Consumer;
+
 
 public class MyArrayList<E> implements MyList<E> {
     private static final int DEFAULT_CAPACITY = 10;
@@ -188,12 +188,30 @@ public class MyArrayList<E> implements MyList<E> {
 
     @Override
     public void sort(Comparator comp) {
-
+        Object buf = null;
+        int max = 0;
+        while (max < size-1){
+            for (int i = 0; i < size-1; i++) {
+                if (comp.compare(myArrayList[i], myArrayList[i+1]) > 0 ){
+                    buf = myArrayList[i];
+                    myArrayList[i] = myArrayList[i+1];
+                    myArrayList[i+1] = buf;
+                }
+            }
+            max++;
+        }
     }
 
     @Override
     public MyList<E> subList(int start, int end) {
-        return null;
+        MyList subList = new MyArrayList<E>(end-start);
+        for (int i = 0; i < myArrayList.length; i++) {
+            if (i >= start && i < end) {
+                subList.add(myArrayList[i]);
+            }
+            if (i == end) break;
+        }
+        return subList;
     }
 
 
